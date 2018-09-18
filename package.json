@@ -1,5 +1,5 @@
 {
-  "name": "rn-expandabletext",
+  "name": "expandabletext",
   "version": "1.0.0",
   "description": "Expandable Text component of React Native, collapse text when the content exceeds specified number of lines",
   "main": "./src/expandableText.js",
@@ -22,11 +22,6 @@
     "url": "https://github.com/geekeren/RN-ExpandableText/issues"
   },
   "homepage": "https://github.com/geekeren/RN-ExpandableText#readme",
-  "dependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.5.1",
-    "react-native": "^0.57.0"
-  },
   "peerDependencies": {
     "prop-types": ">= 15.5.x",
     "react": ">= 15.5.x",
