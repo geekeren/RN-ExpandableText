@@ -72,7 +72,7 @@ export default class ExpandableText extends React.Component {
         >
           {this.props.children}
         </Text>
-        <TouchableOpacity onPress={this.onPressExpand.bind(this)}>
+        <TouchableOpacity style={styles.expandText} onPress={this.onPressExpand.bind(this)}>
           {renderExpandView}
         </TouchableOpacity>
       </View>

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 
 export default class ExpandableText extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ export default class ExpandableText extends React.Component {
     this.state = {
       expanded: true,
       numberOfLines: null,
-      showExpandView: false,
-      expandText: 'Expand',
+      showExpandText: false,
+      expandText: '展开',
     }
     this.numberOfLines = props.numberOfLines
     this.needExpand = true
@@ -29,7 +29,7 @@ export default class ExpandableText extends React.Component {
           this.needExpand = false
         } else {
           this.needExpand = true
-          this.setState({ showExpandView: true })
+          this.setState({ showExpandText: true })
         }
         this.measureFlag = false
       }
@@ -38,31 +38,22 @@ export default class ExpandableText extends React.Component {
 
   onPressExpand() {
     if (!this.state.expanded) {
-      this.setState({ numberOfLines: null, expandText: 'Collapse', expanded: true })
-      if (this.props.onCollapse) {
-        this.props.onCollapse()
-      }
+      this.setState({ numberOfLines: null, expandText: '收起', expanded: true })
     } else {
-      this.setState({ numberOfLines: this.numberOfLines, expandText: 'Expand', expanded: false })
-      if (this.props.onExpand) {
-        this.props.onExpand()
-      }
+      this.setState({ numberOfLines: this.numberOfLines, expandText: '展开', expanded: false })
     }
   }
 
   render() {
     const { numberOfLines, expandTextStyle, ...rest } = this.props
-    let renderExpandView = <Text style={[this.props.style, styles.expandText, expandTextStyle]}>
-      {this.state.expandText}
-    </Text>
-    const {expandView, unexpandView} = this.props
-    if (!this.state.expanded && expandView) {
-      renderExpandView = expandView()
-    }
-    if (this.state.expanded && unexpandView) {
-      renderExpandView = unexpandView()
-    }
-    renderExpandView = this.state.showExpandView ? renderExpandView : null
+    const expandText = this.state.showExpandText ? (
+      <Text
+        style={[this.props.style, styles.expandText, expandTextStyle]}
+        onPress={this.onPressExpand.bind(this)}
+      >
+        {this.state.expandText}
+      </Text>
+    ) : null
     return (
       <View>
         <Text
@@ -72,9 +63,7 @@ export default class ExpandableText extends React.Component {
         >
           {this.props.children}
         </Text>
-        <TouchableOpacity onPress={this.onPressExpand.bind(this)}>
-          {renderExpandView}
-        </TouchableOpacity>
+        {expandText}
       </View>
     )
   }
@@ -82,7 +71,7 @@ export default class ExpandableText extends React.Component {
 
 const styles = StyleSheet.create({
   expandText: {
-    color: 'gray',
+    color: 'blue',
     marginTop: 0,
     textAlign: 'center',
   },
@@ -91,10 +80,6 @@ const styles = StyleSheet.create({
 ExpandableText.propTypes = {
   children: PropTypes.element.isRequired,
   numberOfLines: PropTypes.number,
-  expandView: PropTypes.func,
-  unexpandView: PropTypes.func,
-  onExpand: PropTypes.func,
-  onCollapse: PropTypes.func,
 }
 
 ExpandableText.defaultProps = {
