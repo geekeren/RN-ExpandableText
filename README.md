@@ -5,7 +5,7 @@
 
 ## Introduction
 
-RN-ExpandableText is an component of React Native, the  all usages of ExpandableText is the same as the native `Text` component, but it will collapse text when its content exceeds specified number of lines.
+RN-ExpandableText is an component of React Native, all the usages of ExpandableText is the same as the native `Text` component, but it will collapse text when its content exceeds specified number of lines.
 
 ## Installation
  ```
@@ -38,6 +38,7 @@ RN-ExpandableText is an component of React Native, the  all usages of Expandable
 |onExpand| A callback when the content expands| - |
 |onCollapse| A callback when the content collapses| - |
 
-## Demo
+## Demos
 |Default View|customize the expand-view|
-|![Default View](./docs/images/preview1.gif)|![Default View](./docs/images/preview1.gif)
+|-------|----------|
+|![Default View](./docs/images/preview1.gif)|![Default View](./docs/images/preview2.gif)
