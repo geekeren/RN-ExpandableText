@@ -28,7 +28,6 @@ RN-ExpandableText is an component of React Native, the  all usages of Expandable
       {content}
     </ExpandableText>
 ```
-
 ## Properties
 
 | Prop                  | Description                              | Default        |
@@ -38,3 +37,7 @@ RN-ExpandableText is an component of React Native, the  all usages of Expandable
 |unexpandView| A callback function to return unexpand-view. Usage the same as expandView|
 |onExpand| A callback when the content expands| - |
 |onCollapse| A callback when the content collapses| - |
+
+## Demo
+|Default View|customize the expand-view|
+|![Default View](./docs/images/preview1.gif)|![Default View](./docs/images/preview1.gif)
