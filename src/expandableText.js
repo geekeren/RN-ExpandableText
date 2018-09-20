@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 })
 
 ExpandableText.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
   numberOfLines: PropTypes.number,
   expandView: PropTypes.func,
   unexpandView: PropTypes.func,
