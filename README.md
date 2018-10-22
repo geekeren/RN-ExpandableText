@@ -20,7 +20,7 @@ RN-ExpandableText is an component of React Native, all the usages of ExpandableT
     <ExpandableText
       numberOfLines={10}
       style={styles.expandableText}
-      unexpandView={() => null}
+      collapseView={() => null}
       expandView={() =>
         (<View style={styles.arrow} />)
       }
@@ -33,10 +33,12 @@ RN-ExpandableText is an component of React Native, all the usages of ExpandableT
 | Prop                  | Description                              | Default        |
 | --------------------- | ---------------------- | -------------- |
 |numberOfLines|The max number of lines the content will be, the content exceed this value, the expandview will show.|5|
+|maxHeight|The max height of the content will be shown, the content exceed this value, the expandview will show.|-|
 |expandView| A callback function to return expand-view, you can customize the expand-view. when it's null, expand-view will disappear
-|unexpandView| A callback function to return unexpand-view. Usage the same as expandView|
+|collapseView| A callback function to return unexpand-view. Usage the same as expandView|
 |onExpand| A callback when the content expands| - |
 |onCollapse| A callback when the content collapses| - |
+|animationDuration| the duration(ms) of expand or collapse animation| 100 |
 
 ## Demos
 |Default View|customize the expand-view|
