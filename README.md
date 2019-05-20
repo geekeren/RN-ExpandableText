@@ -45,6 +45,14 @@ RN-ExpandableText is an component of React Native, all the usages of ExpandableT
 |-------|----------|
 |![Default View](./docs/images/preview1.gif)|![Default View](./docs/images/preview2.gif)
 
+### Run Example in Local
+```
+cd example
+react-native run-android
+```
+
+### View Demo in Snack: https://snack.expo.io/@baiyuan/de9538
+
 ## Follow Me
 
 <div style="text-align:center">
